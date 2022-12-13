@@ -9,6 +9,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/31149d48b0.js" crossorigin="anonymous"></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init("KH0oOL-w-hPlDRycw");
+    })();
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-sm navbar-dark fixed-top navbarScroll">
@@ -58,6 +66,7 @@
                 <div class="col-lg-2">
                     <img src="images/HubSpot.jpg" class= "imageAboutPage" alt="">
                 </div>
+
                 <div class="col-lg-10">
                     <div class="row mt-3">
                         <div>
@@ -88,11 +97,10 @@
         <div class="container pt-4">
             <h1 class="text-center">Education</h1>
             <div class="row mt-4">
-
                 <div class="col-lg-2">
                     <img src="images/TUD.png" class= "imageAboutPage" alt="">
                 </div>
-                <div class="col-lg-10 mt-4">
+                <div class="col-lg-10">
                     <div>
                         <ul>
                             <li><b>University:</b> Technological University Dublin</li>
@@ -102,7 +110,6 @@
                         </ul>
                     </div>
                 </div>
-
                 <div class="row mt-3">
                     <h5 class="text-center">Modules Studied</h5>
                     <div class="container mt-3">
@@ -267,10 +274,10 @@
                         <img class="card-img-top" src="images/portfolioImage2.jpg" alt="Card image" style="width:100%; height:300px;">
                         <div class="card-body">
                             <h4 class="card-title">Library Web App</h4>
-                            <p class="card-text" style="height:50px;">Fourth year project: Web application used to manage and maintain a Library, admin, users and inventory. Developed with <b>Spring Boot, Java, React, Redux, CSS, JSX, Git, Azure.</b></p>
-                        </div>
-                        <div class="card-footer text-center mt-3">
-                            <a href="https://github.com/TUDublin/code-and-docs-ray92mc" class="btn btn-success">Link</a>
+                            <p class="card-text" style="height:50px;">Fourth year project: Web application used to manage and maintain a Library, admin, users and inventor. Developed with <b>Spring Boot, Java, React, Redux, CSS, JSX, Git, Azure.</b></p>
+                            <div class="text-center mt-2 pt-3">
+                                <a href="https://github.com/TUDublin/code-and-docs-ray92mc" class="btn btn-success">Link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -281,20 +288,21 @@
                         <div class="card-body">
                             <h4 class="card-title">E-Commerce Web App</h4>
                             <p class="card-text" style="height:50px;">Second year project: E-Commerce bookstore web application developed with <b>Django, Python, JavaScript, CSS, HTML, Stripe, Git, GitHub.</b></p>
-                        </div>
-                        <div class="card-footer text-center mt-3">
-                            <a href="https://github.com/ray92mc/FullStackEcommerceGroupProject" class="btn btn-success">Link</a>
+                            <div class="text-center mt-2 pt-3">
+                                <a href="https://github.com/ray92mc/FullStackEcommerceGroupProject" class="btn btn-success">Link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
     <!-- contact section-->
     <section id="contact">
-        <div class="container mt-3 contactContent">
+        <div class="container mt-3">
             <h1 class="text-center">Contact Me</h1>
-
-            <div class="row mt-4">
-                <div class="col-lg-6">
+            <div class="row">
+                <div class="col-md-6">
                     <div style="text-decoration:none; overflow:hidden;max-width:100%;width:500px;height:500px;">
                         <div id="my-map-canvas" style="height:100%; width:100%;max-width:100%;">
                             <iframe style="height:100%;width:100%;border:0;" frameborder="0" src="https://www.google.com/maps/embed/v1/place?q=Tallaght,+Dublin,+D24+FKT9,+Ireland&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8">
@@ -305,50 +313,49 @@
                         </style>
                         </div>
                 </div>
-
-                <div class="col-lg-6">
+                <div class="col-md-6 py-3">
                     <!-- form fields -->
                     <form>
-                        <input type="text" class="form-control mt-3" placeholder="Name">
-                        <input type="email" class="form-control mt-3" placeholder="Email">
-                        <input type="text" class="form-control mt-3" placeholder="Subject">
+                        <input type="text" class="form-control mt-3" placeholder="Name" id="name">
+                        <input type="email" class="form-control mt-3" placeholder="Email" id="email">
+                        <input type="text" class="form-control mt-3" placeholder="Subject" id="subject">
                             <div class="mt-3">
-                                <textarea class="form-control" rows="5" id="comment" name="text" placeholder="Project Details"></textarea>
+                                <textarea class="form-control" rows="5" id="message" name="text" placeholder="Project Details"></textarea>
                                 <div class="container">
-                                    <button type="button" class="btn btn-success mt-3">Contact Me</button>
+                                    <button type="button" class="btn btn-success mt-3" onclick="sendMail()">Submit</button>
                                     <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#myModal">
                                     Contact Information
                                     </button>
                                 </div>
-                        <!-- The Modal -->
-                                <div class="modal" id="myModal">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                            
-                                            <!-- Modal Header -->
-                                            <div class="modal-header">
-                                            <h4 class="modal-title">Contact</h4>
-                                            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                                            </div>
-                            
-                                            <!-- Modal body -->
-                                            <div class="modal-body">
-                                            <ul>
-                                                <li>Email: raymccarthy5@gmail.com</li>
-                                                <li>Phone: 0830527369</li>
-                                            </ul>
-                                            </div>
-                            
-                                            <!-- Modal footer -->
-                                            <div class="modal-footer">
-                                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
-                                            </div>
-                            
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
                         </form>
+                </div>
+            </div>
+        </div>
+        <!-- The Modal -->
+        <div class="modal" id="myModal">
+            <div class="modal-dialog">
+                <div class="modal-content">
+    
+                    <!-- Modal Header -->
+                    <div class="modal-header">
+                    <h4 class="modal-title">Contact</h4>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+    
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                    <ul>
+                        <li>Email: raymccarthy5@gmail.com</li>
+                        <li>Phone: 0830527369</li>
+                    </ul>
+                    </div>
+    
+                    <!-- Modal footer -->
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+                    </div>
+    
                 </div>
             </div>
         </div>
