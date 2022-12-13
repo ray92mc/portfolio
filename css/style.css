@@ -36,10 +36,10 @@
     text-align: center;
 }
 .card:hover .servicesIcon {
-    color: #008000;
+    color: blue;
 }
 .servicesText:hover {
-    border: 1px solid #008000;
+    border: 1px solid blue;
 }
 .navbarScroll.navbarDark {
     background-color: black;
